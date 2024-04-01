@@ -108,50 +108,86 @@
 
     <hr>
 
-    <!-- Gallery Section -->
-    <div class="w3-row w3-padding-64" id="gallery">
-        <h1 class="w3-center">Gallery</h1>
-        <div class="w3-row">
-            <div class="w3-half w3-padding">
-                <img src="https://media-cdn.tripadvisor.com/media/photo-s/0a/bf/7b/d3/trude-burger-at-ludwig.jpg" class="w3-image gallery-img" alt="Restaurant Image">
-            </div>
-            <div class="w3-half w3-padding">
-                <img src="https://cdn.sortiraparis.com/images/80/97210/726618-umami-burger-le-restaurant-californien-de-burgers-gourmets.jpg" class="w3-image gallery-img" alt="Restaurant Image">
-            </div>
+     <!-- Gallery Section -->
+<div class="w3-row w3-padding-64" id="gallery">
+    <h1 class="w3-center">Gallery</h1>
+    <div class="w3-row">
+        <div class="w3-half w3-padding">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/0a/bf/7b/d3/trude-burger-at-ludwig.jpg" class="w3-image gallery-img" alt="Restaurant Image">
         </div>
-        <div class="w3-row">
-            <div class="w3-half w3-padding">
-                <img src="https://blacktap.com/wp-content/uploads/2023/07/burger-restaurant-fashion-district-new-york-city-burgers-joint-nyc-hamburger-places-6.jpg" class="w3-image gallery-img" alt="Restaurant Image">
-            </div>
-            <div class="w3-half w3-padding">
-                <img src="https://www.shutterstock.com/image-photo/chef-hand-cooking-cheese-burger-600nw-2394945115.jpg" class="w3-image gallery-img" alt="Restaurant Image">
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-half w3-padding">
-                <img src="https://www.tastingtable.com/img/gallery/what-makes-restaurant-burgers-taste-different-from-homemade-burgers-upgrade/l-intro-1662064407.jpg" class="w3-image gallery-img" alt="Restaurant Image">
-            </div>
-            <div class="w3-half w3-padding">
-                <img src="https://media.timeout.com/images/105290190/750/422/image.jpg" class="w3-image gallery-img" alt="Restaurant Image">
-            </div>
+        <div class="w3-half w3-padding">
+            <img src="https://cdn.sortiraparis.com/images/80/97210/726618-umami-burger-le-restaurant-californien-de-burgers-gourmets.jpg" class="w3-image gallery-img" alt="Restaurant Image">
         </div>
     </div>
-
-    <!-- Enlarged Image Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
+    <div class="w3-row">
+        <div class="w3-half w3-padding">
+            <img src="https://blacktap.com/wp-content/uploads/2023/07/burger-restaurant-fashion-district-new-york-city-burgers-joint-nyc-hamburger-places-6.jpg" class="w3-image gallery-img" alt="Restaurant Image">
+        </div>
+        <div class="w3-half w3-padding">
+            <img src="https://www.shutterstock.com/image-photo/chef-hand-cooking-cheese-burger-600nw-2394945115.jpg" class="w3-image gallery-img" alt="Restaurant Image">
+        </div>
     </div>
+    <div class="w3-row">
+        <div class="w3-half w3-padding">
+            <img src="https://www.tastingtable.com/img/gallery/what-makes-restaurant-burgers-taste-different-from-homemade-burgers-upgrade/l-intro-1662064407.jpg" class="w3-image gallery-img" alt="Restaurant Image">
+        </div>
+        <div class="w3-half w3-padding">
+            <img src="https://media.timeout.com/images/105290190/750/422/image.jpg" class="w3-image gallery-img" alt="Restaurant Image">
+        </div>
+    </div>
+</div>
 
-    <style>
-        /* Style the modal content */
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 1200px;
+<!-- Enlarged Image Modal -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+
+<style>
+    /* Style the modal content */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 1200px;
+    }
+</style>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get all images with class "gallery-img"
+    var images = document.getElementsByClassName("gallery-img");
+
+    // Get the modal image
+    var modalImg = document.getElementById("img01");
+
+    // Loop through all images and add click event listeners
+    for (var i = 0; i < images.length; i++) {
+        images[i].addEventListener("click", function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        });
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    // Close the modal when user clicks outside of it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
-    </style>
+    };
+</script>
+
+    <hr>
 
     <!-- Contact Section -->
     <div class="w3-container w3-padding-64" id="contact">
