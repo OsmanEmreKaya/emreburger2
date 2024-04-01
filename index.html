@@ -220,6 +220,9 @@
     // Get the contact form
     var contactForm = document.getElementById("contactForm");
 
+    // Get the input field for number of people
+    var peopleInput = document.querySelector('input[name="People"]');
+
     // Get the message display element
     var messageDisplay = document.getElementById("message");
 
@@ -228,7 +231,15 @@
         // Prevent default form submission behavior
         event.preventDefault();
 
-        // Display the message
+        // Check if the number of people is negative
+        if (parseInt(peopleInput.value) < 0) {
+            // Display an error message
+            alert("Please enter a non-negative number for the number of people.");
+            // Stop form submission
+            return;
+        }
+
+        // Display the message sent successfully
         messageDisplay.style.display = "block";
 
         // Hide the message after 3 seconds
